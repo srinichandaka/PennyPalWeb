@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://srinichandaka.github.io/PennyPal/sitemap.xml
