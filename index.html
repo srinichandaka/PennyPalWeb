@@ -526,13 +526,34 @@
     }
 
     .screenshot-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      display: flex;
       gap: 18px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 6px 4px 16px;
+      margin: 0 -4px;
+      scroll-snap-type: x proximity;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(24, 22, 31, 0.22) transparent;
+    }
+
+    .screenshot-grid::-webkit-scrollbar {
+      height: 10px;
+    }
+
+    .screenshot-grid::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .screenshot-grid::-webkit-scrollbar-thumb {
+      background: rgba(24, 22, 31, 0.18);
+      border-radius: 999px;
     }
 
     .gallery-card {
+      flex: 0 0 min(320px, calc(100vw - 56px));
       overflow: hidden;
+      scroll-snap-align: start;
     }
 
     .gallery-card .device {
@@ -638,8 +659,7 @@
     @media (max-width: 1080px) {
       .hero,
       .story-layout,
-      .premium-grid,
-      .screenshot-grid {
+      .premium-grid {
         grid-template-columns: 1fr;
       }
 
@@ -693,8 +713,8 @@
         grid-template-columns: 1fr;
       }
 
-      .screenshot-grid {
-        gap: 16px;
+      .gallery-card {
+        flex-basis: min(280px, calc(100vw - 48px));
       }
     }
 
