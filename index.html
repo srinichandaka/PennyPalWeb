@@ -447,6 +447,35 @@
       gap: 18px;
     }
 
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .stat-card {
+      padding: 24px;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      color: var(--text);
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
     .premium-card,
     .story-panel,
     .gallery-card,
@@ -660,7 +689,8 @@
     @media (max-width: 1080px) {
       .hero,
       .story-layout,
-      .premium-grid {
+      .premium-grid,
+      .stats-grid {
         grid-template-columns: 1fr;
       }
 
@@ -819,7 +849,7 @@
           </div>
         </section>
 
-        <section id="features">
+        <section>
           <div class="section-heading">
             <h2>Not a generic budget app with couples added later.</h2>
             <p>
@@ -851,6 +881,30 @@
                 Bring in statement data, skip the blank-sheet problem, and build your spending story
                 from what has already happened.
               </p>
+            </article>
+          </div>
+        </section>
+
+        <section id="features">
+          <div class="section-heading">
+            <h2>User statistics</h2>
+            <p>
+              A quick snapshot of how PennyPal is helping couples stay on top of shared household
+              money.
+            </p>
+          </div>
+          <div class="stats-grid" aria-label="User statistics">
+            <article class="stat-card">
+              <strong>3K+</strong>
+              <span>Couples managing money</span>
+            </article>
+            <article class="stat-card">
+              <strong>£1.2 million</strong>
+              <span>Spending tracked</span>
+            </article>
+            <article class="stat-card">
+              <strong>68%</strong>
+              <span>Spotted avoidable spending</span>
             </article>
           </div>
         </section>
@@ -963,6 +1017,7 @@
           </div>
           <p class="gallery-note">Explore the key flows for importing statements, syncing household activity between devices, reviewing transactions and understanding spending together.</p>
         </section>
+
       </main>
 
       <footer class="footer">
