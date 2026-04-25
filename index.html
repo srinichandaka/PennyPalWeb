@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PennyPal | Shared Money Clarity for Couples</title>
-  <meta name="description" content="PennyPal helps couples import statements, separate personal and shared spending, and understand household money together. Join the waitlist for the iPhone launch.">
+  <meta name="description" content="PennyPal helps couples import statements, sync household transactions across devices in realtime, and understand personal and shared spending together.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#ff6b57">
   <meta name="apple-mobile-web-app-title" content="PennyPal">
@@ -15,12 +15,12 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PennyPal">
   <meta property="og:title" content="PennyPal | Shared Money Clarity for Couples">
-  <meta property="og:description" content="Import statements, separate personal and shared spending, and get a calmer shared view of money together.">
+  <meta property="og:description" content="Import statements, sync household transactions across devices in realtime, and get a calmer shared view of money together.">
   <meta property="og:url" content="https://www.pennypal.uk/">
   <meta property="og:image" content="https://www.pennypal.uk/assets/screenshots/PennyPal-dashboard.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="PennyPal | Shared Money Clarity for Couples">
-  <meta name="twitter:description" content="A premium money app for couples who want household clarity without spreadsheet stress.">
+  <meta name="twitter:description" content="A premium money app for couples who want realtime household sync and clarity without spreadsheet stress.">
   <meta name="twitter:image" content="https://www.pennypal.uk/assets/screenshots/PennyPal-dashboard.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@
       "name": "PennyPal",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "iOS",
-      "description": "PennyPal helps couples import statements, separate personal and household spending, and review money together.",
+      "description": "PennyPal helps couples import statements, sync household transactions across devices in realtime, and review money together.",
       "url": "https://www.pennypal.uk/",
       "image": "https://www.pennypal.uk/assets/icons/icon-512.png",
       "publisher": {
@@ -162,8 +162,7 @@
       height: 100%;
     }
 
-    .nav-links,
-    .nav-cta {
+    .nav-links {
       display: flex;
       align-items: center;
       gap: 18px;
@@ -197,12 +196,6 @@
       transform: translateY(-1px);
     }
 
-    .button-primary {
-      background: linear-gradient(135deg, var(--brand) 0%, #ff8a5f 100%);
-      color: #fff;
-      box-shadow: 0 18px 40px rgba(255, 107, 87, 0.28);
-    }
-
     .button-secondary {
       background: rgba(255, 255, 255, 0.72);
       border: 1px solid rgba(24, 22, 31, 0.08);
@@ -211,16 +204,40 @@
       backdrop-filter: blur(12px);
     }
 
-    .button-disabled {
-      background: rgba(24, 22, 31, 0.06);
-      border: 1px solid rgba(24, 22, 31, 0.08);
-      color: var(--muted);
-      box-shadow: none;
-      cursor: default;
+    .app-store-badge {
+      min-height: 56px;
+      padding: 10px 18px;
+      border-radius: 18px;
+      background: #111111;
+      color: #fff;
+      box-shadow: 0 18px 40px rgba(17, 17, 17, 0.22);
+      gap: 12px;
+      align-items: center;
     }
 
-    .button-disabled:hover {
-      transform: none;
+    .app-store-badge svg {
+      width: 22px;
+      height: 22px;
+      flex: 0 0 22px;
+    }
+
+    .app-store-copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.05;
+    }
+
+    .app-store-copy small {
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      opacity: 0.82;
+    }
+
+    .app-store-copy strong {
+      font-size: 1rem;
+      font-weight: 700;
     }
 
     .hero {
@@ -229,21 +246,6 @@
       gap: 34px;
       align-items: center;
       padding: 28px 0 112px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(24, 22, 31, 0.08);
-      color: var(--brand-deep);
-      font-size: 0.92rem;
-      font-weight: 700;
-      box-shadow: var(--shadow-soft);
-      backdrop-filter: blur(10px);
     }
 
     h1,
@@ -272,6 +274,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
+      justify-content: center;
     }
 
     .hero-proof {
@@ -426,7 +429,6 @@
     .premium-card,
     .story-panel,
     .gallery-card,
-    .waitlist-panel,
     .detail-card,
     .footer-panel {
       background: var(--surface-strong);
@@ -455,7 +457,6 @@
 
     .premium-card h3,
     .story-panel h3,
-    .waitlist-panel h3,
     .detail-card h3 {
       font-size: 1.45rem;
       margin-bottom: 10px;
@@ -463,7 +464,6 @@
 
     .premium-card p,
     .story-panel p,
-    .waitlist-panel p,
     .detail-card p,
     .fine-print,
     .gallery-note,
@@ -583,46 +583,6 @@
       font-size: 0.95rem;
     }
 
-    .waitlist-shell {
-      max-width: 760px;
-    }
-
-    .waitlist-panel {
-      padding: 30px;
-    }
-
-    .waitlist-panel h3 {
-      margin-bottom: 12px;
-    }
-
-    .waitlist-form {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 12px;
-      margin: 22px 0 12px;
-    }
-
-    .waitlist-form input {
-      width: 100%;
-      min-height: 54px;
-      border-radius: 999px;
-      border: 1px solid rgba(24, 22, 31, 0.1);
-      padding: 0 18px;
-      font: inherit;
-      color: var(--text);
-      background: #fff;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
-    }
-
-    .waitlist-form button {
-      min-height: 54px;
-      padding: 0 22px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, var(--brand) 0%, #ff8a5f 100%);
-      color: #fff;
-      box-shadow: 0 18px 38px rgba(255, 107, 87, 0.26);
-    }
-
     .footer {
       padding: 24px 0 40px;
     }
@@ -681,9 +641,7 @@
       }
 
       .nav-links,
-      .nav-cta,
-      .hero-proof,
-      .waitlist-form {
+      .hero-proof {
         width: 100%;
       }
 
@@ -707,10 +665,6 @@
 
       .phone-frame {
         width: min(320px, 82%);
-      }
-
-      .waitlist-form {
-        grid-template-columns: 1fr;
       }
 
       .gallery-card {
@@ -761,19 +715,14 @@
         <nav class="nav-links" aria-label="Primary">
           <a href="#features">Features</a>
           <a href="#screenshots">Screenshots</a>
-          <a href="#waitlist">Waitlist</a>
           <a href="./support.html">Support</a>
           <a href="./privacy.html">Privacy</a>
         </nav>
-        <div class="nav-cta">
-          <a class="button button-secondary small" href="#waitlist">Join Waitlist</a>
-        </div>
       </header>
 
       <main>
         <section class="hero">
           <div class="hero-copy">
-            <span class="eyebrow">Coming soon to the App Store</span>
             <h1>Household money, finally handled like a premium product.</h1>
             <p>
               PennyPal gives couples a calmer way to import statements, separate personal and shared
@@ -781,9 +730,15 @@
               spreadsheets or awkward budgeting workarounds.
             </p>
             <div class="cta-row">
-              <a class="button button-primary" href="#waitlist">Get launch updates</a>
-              <a class="button button-secondary" href="./support.html">View support</a>
-              <span class="button button-disabled" aria-label="PennyPal App Store page coming soon">App Store coming soon</span>
+              <a class="button app-store-badge" href="https://apps.apple.com/gb/app/pennypal-uk/id6762628906" aria-label="Download PennyPal UK on the App Store">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                  <path fill="currentColor" d="M16.77 12.86c.02 2.31 2.03 3.08 2.05 3.09-.02.05-.32 1.12-1.06 2.22-.64.95-1.31 1.9-2.36 1.92-1.03.02-1.36-.61-2.53-.61-1.16 0-1.53.59-2.51.63-1.01.04-1.78-1.02-2.43-1.96-1.32-1.91-2.33-5.38-.97-7.74.68-1.17 1.89-1.91 3.2-1.93 1-.02 1.94.68 2.53.68.58 0 1.68-.84 2.82-.72.48.02 1.84.19 2.71 1.46-.07.04-1.62.95-1.6 2.96Zm-1.6-6.98c.54-.66.91-1.57.81-2.48-.78.03-1.73.52-2.29 1.18-.5.58-.93 1.51-.81 2.4.87.07 1.75-.44 2.29-1.1Z"/>
+                </svg>
+                <span class="app-store-copy">
+                  <small>Download on the</small>
+                  <strong>App Store</strong>
+                </span>
+              </a>
             </div>
             <div class="hero-proof" aria-label="PennyPal highlights">
               <div class="proof">
@@ -791,12 +746,12 @@
                 <span>Separate personal and household spending without losing the full picture.</span>
               </div>
               <div class="proof">
-                <strong>Fast imports</strong>
-                <span>Turn statement files into organised transactions and insights quickly.</span>
+                <strong>Realtime sync</strong>
+                <span>Household transactions stay in sync across devices so both partners stay up to date.</span>
               </div>
               <div class="proof">
                 <strong>Built for two</strong>
-                <span>Designed around real couples, shared homes and everyday money conversations.</span>
+                <span>Designed around real couples, shared homes and everyday money conversations on both devices.</span>
               </div>
             </div>
           </div>
@@ -841,18 +796,18 @@
             </article>
             <article class="premium-card">
               <div class="index">02</div>
-              <h3>Statement-led setup that respects real life</h3>
+              <h3>Realtime household syncing across devices</h3>
               <p>
-                Bring in statement data, skip the blank-sheet problem, and build your spending story
-                from what has already happened.
+                Shared transactions update across your devices so you and your partner are looking at
+                the same household picture, not two versions of it.
               </p>
             </article>
             <article class="premium-card">
               <div class="index">03</div>
-              <h3>Insights that feel clear, not clinical</h3>
+              <h3>Statement-led setup that respects real life</h3>
               <p>
-                Spot category trends, shared cost patterns and monthly behaviour without turning your
-                finances into another source of stress.
+                Bring in statement data, skip the blank-sheet problem, and build your spending story
+                from what has already happened.
               </p>
             </article>
           </div>
@@ -882,18 +837,18 @@
               </article>
               <article class="detail-card">
                 <strong>Household visibility</strong>
-                <h3>Understand shared costs without erasing personal context.</h3>
+                <h3>Keep household transactions synced without losing personal context.</h3>
                 <p>
-                  Rent, groceries, subscriptions and travel make sense faster when the app is built
-                  around home life rather than a solo budgeting template.
+                  Rent, groceries, subscriptions and travel make sense faster when both people see
+                  the same shared transactions update across their own devices.
                 </p>
               </article>
               <article class="detail-card">
-                <strong>Launch-ready trust</strong>
-                <h3>Support, privacy and signup paths are all in place.</h3>
+                <strong>Built for daily use</strong>
+                <h3>Designed to feel clear, calm and genuinely useful.</h3>
                 <p>
-                  PennyPal now has the essentials people expect from a serious app before they ever
-                  tap download.
+                  From first import to regular reviews, PennyPal is built to make ongoing money
+                  management feel simpler and more collaborative.
                 </p>
               </article>
             </div>
@@ -915,7 +870,7 @@
               </div>
               <div class="gallery-caption">
                 <strong>Track the whole picture</strong>
-                <span>See your latest totals, trends and monthly context at a glance.</span>
+                <span>See synced household totals, trends and monthly context at a glance.</span>
               </div>
             </article>
             <article class="gallery-card">
@@ -924,7 +879,7 @@
               </div>
               <div class="gallery-caption">
                 <strong>Review the details</strong>
-                <span>Understand individual transactions without losing household context.</span>
+                <span>Review individual transactions while staying aligned with what is synced across the household.</span>
               </div>
             </article>
             <article class="gallery-card">
@@ -960,42 +915,17 @@
               </div>
               <div class="gallery-caption">
                 <strong>Built for shared households</strong>
-                <span>Keep personal and household expenses separate, visible and fair.</span>
+                <span>Keep personal and household expenses separate while shared transactions stay up to date on both devices.</span>
               </div>
             </article>
           </div>
-          <p class="gallery-note">App Store screenshots are ready to support launch marketing, submission assets and richer search previews.</p>
-        </section>
-
-        <section id="waitlist">
-          <div class="waitlist-shell">
-            <article class="waitlist-panel">
-              <span class="eyebrow">Waitlist</span>
-              <h2>Be first to know when PennyPal lands on the App Store.</h2>
-              <p>
-                Join the email list for launch updates, early access news and major feature
-                announcements. The signup form sends directly to the PennyPal inbox so you can start
-                collecting interest from the site right away.
-              </p>
-              <form class="waitlist-form" action="https://formsubmit.co/contactus@pennypal.uk" method="POST">
-                <input type="hidden" name="_subject" value="New PennyPal waitlist signup">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_next" value="https://www.pennypal.uk/#waitlist">
-                <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email" required>
-                <button type="submit">Join waitlist</button>
-              </form>
-              <p class="fine-print">
-                By signing up, you agree to receive launch-related updates from PennyPal. See the
-                <a href="./privacy.html">Privacy Policy</a> for details.
-              </p>
-            </article>
-          </div>
+          <p class="gallery-note">Explore the key flows for importing statements, syncing household activity between devices, reviewing transactions and understanding spending together.</p>
         </section>
       </main>
 
       <footer class="footer">
         <div class="footer-panel small">
-          <span>PennyPal helps couples feel more in sync with money.</span>
+          <span>PennyPal helps couples stay in sync with household money in realtime.</span>
           <div class="footer-links">
             <a href="./support.html">Support</a>
             <a href="./privacy.html">Privacy</a>
