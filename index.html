@@ -31,7 +31,7 @@
   <meta name="twitter:image:alt" content="PennyPal dashboard screenshot on iPhone">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -61,7 +61,7 @@
       --surface-strong: rgba(255, 255, 255, 0.95);
       --card: #fffdfb;
       --text: #18161f;
-      --muted: #5f6270;
+      --muted: #4d5160;
       --line: rgba(24, 22, 31, 0.08);
       --brand: #ff6b57;
       --brand-deep: #de5846;
@@ -158,11 +158,13 @@
       margin: 0 auto;
     }
 
+    /* ── Navigation ── */
     .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 26px 0;
+      gap: 16px;
     }
 
     .brand {
@@ -195,14 +197,33 @@
       font-size: 0.96rem;
     }
 
-    .button,
-    button {
-      appearance: none;
-      border: 0;
-      cursor: pointer;
-      font: inherit;
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: #111111;
+      color: #fff;
+      font-size: 0.92rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+      box-shadow: 0 8px 24px rgba(17, 17, 17, 0.18);
     }
 
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 30px rgba(17, 17, 17, 0.24);
+    }
+
+    .nav-cta svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ── Buttons ── */
     .button {
       display: inline-flex;
       align-items: center;
@@ -210,6 +231,10 @@
       min-height: 52px;
       padding: 0 22px;
       border-radius: 999px;
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      appearance: none;
       transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
     }
 
@@ -253,12 +278,13 @@
       font-weight: 700;
     }
 
+    /* ── Hero ── */
     .hero {
       display: grid;
       grid-template-columns: 1.08fr 0.92fr;
       gap: 34px;
       align-items: center;
-      padding: 28px 0 112px;
+      padding: 28px 0 96px;
     }
 
     h1,
@@ -287,7 +313,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .hero-proof {
@@ -317,6 +343,7 @@
       font-size: 0.92rem;
     }
 
+    /* ── Hero visual / phone ── */
     .hero-visual {
       position: relative;
       min-height: 640px;
@@ -421,6 +448,7 @@
       animation: floatB 9s ease-in-out infinite;
     }
 
+    /* ── Shared section styles ── */
     section {
       padding: 38px 0;
     }
@@ -441,39 +469,49 @@
       line-height: 0.98;
     }
 
+    /* ── Stats strip ── */
+    .stats-strip {
+      background: var(--bg-deep);
+      border-radius: var(--radius-xl);
+      padding: 0;
+      margin: 0 0 12px;
+    }
+
+    .stats-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+    }
+
+    .stat-item {
+      padding: 32px 28px;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-item strong {
+      display: block;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 0.92;
+      letter-spacing: -0.04em;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    .stat-item span {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.96rem;
+    }
+
+    /* ── Features / premium cards ── */
     .premium-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .stat-card {
-      padding: 24px;
-      background: var(--surface-strong);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .stat-card strong {
-      display: block;
-      margin-bottom: 10px;
-      font-family: "Fraunces", Georgia, serif;
-      font-size: clamp(2rem, 3vw, 3rem);
-      line-height: 0.92;
-      letter-spacing: -0.04em;
-      color: var(--text);
-    }
-
-    .stat-card span {
-      color: var(--muted);
-      font-size: 1rem;
     }
 
     .premium-card,
@@ -522,59 +560,7 @@
       color: var(--muted);
     }
 
-    .story-layout {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .story-panel {
-      padding: 28px;
-      background:
-        linear-gradient(160deg, rgba(255, 107, 87, 0.94), rgba(255, 147, 90, 0.94)),
-        #ff6b57;
-      color: #fff;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .story-panel::after {
-      content: "";
-      position: absolute;
-      right: -40px;
-      bottom: -60px;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.12);
-    }
-
-    .story-panel p,
-    .story-panel .fine-print {
-      color: rgba(255, 255, 255, 0.84);
-      position: relative;
-      z-index: 1;
-    }
-
-    .story-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .detail-card {
-      padding: 24px;
-    }
-
-    .detail-card strong {
-      display: block;
-      font-size: 0.86rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      color: var(--brand-deep);
-    }
-
+    /* ── Screenshots / gallery ── */
     .screenshot-grid {
       display: flex;
       gap: 18px;
@@ -638,6 +624,101 @@
       font-size: 0.95rem;
     }
 
+    /* ── Story / benefits ── */
+    .story-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .story-panel {
+      padding: 28px;
+      background:
+        linear-gradient(160deg, rgba(255, 107, 87, 0.94), rgba(255, 147, 90, 0.94)),
+        #ff6b57;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .story-panel::after {
+      content: "";
+      position: absolute;
+      right: -40px;
+      bottom: -60px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .story-panel p,
+    .story-panel .fine-print {
+      color: rgba(255, 255, 255, 0.84);
+      position: relative;
+      z-index: 1;
+    }
+
+    .story-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .detail-card {
+      padding: 24px;
+    }
+
+    .detail-card strong {
+      display: block;
+      font-size: 0.86rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      color: var(--brand-deep);
+    }
+
+    /* ── Final CTA section ── */
+    .final-cta {
+      padding: 56px 0 72px;
+    }
+
+    .cta-panel {
+      background:
+        linear-gradient(135deg, rgba(255, 107, 87, 0.10) 0%, rgba(255, 179, 107, 0.12) 100%),
+        var(--surface-strong);
+      border: 1px solid rgba(255, 107, 87, 0.18);
+      border-radius: var(--radius-xl);
+      box-shadow: 0 32px 80px rgba(255, 107, 87, 0.10);
+      padding: 60px 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .cta-panel h2 {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      max-width: 16ch;
+    }
+
+    .cta-panel p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 52ch;
+      margin: 0;
+    }
+
+    .cta-badge-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    /* ── Footer ── */
     .footer {
       padding: 24px 0 40px;
     }
@@ -661,6 +742,7 @@
       font-size: 0.94rem;
     }
 
+    /* ── Animations ── */
     @keyframes floatA {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
@@ -681,17 +763,22 @@
         animation: none;
       }
 
-      .button:hover {
+      .button:hover,
+      .nav-cta:hover {
         transform: none;
       }
     }
 
+    /* ── Responsive ── */
     @media (max-width: 1080px) {
       .hero,
       .story-layout,
-      .premium-grid,
-      .stats-grid {
+      .premium-grid {
         grid-template-columns: 1fr;
+      }
+
+      .stats-strip-inner {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .hero-visual {
@@ -702,21 +789,27 @@
       .card-bottom {
         width: 210px;
       }
+
+      .cta-panel {
+        padding: 44px 32px;
+      }
     }
 
     @media (max-width: 760px) {
       .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 14px;
+        flex-wrap: wrap;
+        gap: 12px;
       }
 
-      .nav-links,
+      .nav-links {
+        width: 100%;
+        flex-wrap: wrap;
+      }
+
       .hero-proof {
         width: 100%;
       }
 
-      .nav-links,
       .cta-row,
       .hero-proof {
         flex-wrap: wrap;
@@ -727,7 +820,7 @@
       }
 
       .hero {
-        padding: 12px 0 88px;
+        padding: 12px 0 72px;
       }
 
       .hero-visual {
@@ -740,6 +833,24 @@
 
       .gallery-card {
         flex-basis: min(280px, calc(100vw - 48px));
+      }
+
+      .stats-strip-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 24px 22px;
+      }
+
+      .stat-item:last-child {
+        border-bottom: none;
+      }
+
+      .cta-panel {
+        padding: 36px 22px;
       }
     }
 
@@ -770,6 +881,10 @@
         width: 180px;
         padding: 16px;
       }
+
+      .nav-cta span {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -777,34 +892,46 @@
   <div class="page-shell">
     <div class="wrap">
       <a class="skip-link" href="#main">Skip to content</a>
-      <header class="nav">
-        <a class="brand" href="./">
-          <span class="brand-mark">
-            <img src="./apple-touch-icon.png" alt="PennyPal app icon" width="180" height="180">
-          </span>
-          <span>PennyPal</span>
-        </a>
-        <nav class="nav-links" aria-label="Primary">
-          <a href="#features">Features</a>
-          <a href="#screenshots">Screenshots</a>
-          <a href="./support.html">Support</a>
-          <a href="./privacy.html">Privacy</a>
+
+      <!-- ── Navigation ── -->
+      <header>
+        <nav class="nav" aria-label="Primary">
+          <a class="brand" href="./">
+            <span class="brand-mark">
+              <img src="./apple-touch-icon.png" alt="PennyPal app icon" width="180" height="180">
+            </span>
+            <span>PennyPal</span>
+          </a>
+          <div class="nav-links">
+            <a href="#features">Features</a>
+            <a href="#screenshots">Screenshots</a>
+            <a href="./support.html">Support</a>
+            <a href="./privacy.html">Privacy</a>
+          </div>
+          <a class="nav-cta" href="https://apps.apple.com/gb/app/pennypal-uk/id6762628906" aria-label="Download PennyPal on the App Store">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
+              <path d="M16.77 12.86c.02 2.31 2.03 3.08 2.05 3.09-.02.05-.32 1.12-1.06 2.22-.64.95-1.31 1.9-2.36 1.92-1.03.02-1.36-.61-2.53-.61-1.16 0-1.53.59-2.51.63-1.01.04-1.78-1.02-2.43-1.96-1.32-1.91-2.33-5.38-.97-7.74.68-1.17 1.89-1.91 3.2-1.93 1-.02 1.94.68 2.53.68.58 0 1.68-.84 2.82-.72.48.02 1.84.19 2.71 1.46-.07.04-1.62.95-1.6 2.96Zm-1.6-6.98c.54-.66.91-1.57.81-2.48-.78.03-1.73.52-2.29 1.18-.5.58-.93 1.51-.81 2.4.87.07 1.75-.44 2.29-1.1Z"/>
+            </svg>
+            <span>Download free</span>
+          </a>
         </nav>
       </header>
 
       <main id="main">
+
+        <!-- ── 1. Hero ── -->
         <section class="hero">
           <div class="hero-copy">
             <h1>Household money, finally handled like a premium product.</h1>
             <p>
               PennyPal gives couples a calmer way to import statements, separate personal and shared
-              spending, and see what is really happening across the household without wrestling with
+              spending, and see what is really happening across the household — without wrestling with
               spreadsheets or awkward budgeting workarounds.
             </p>
             <div class="cta-row">
               <a class="button app-store-badge" href="https://apps.apple.com/gb/app/pennypal-uk/id6762628906" aria-label="Download PennyPal UK on the App Store">
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path fill="currentColor" d="M16.77 12.86c.02 2.31 2.03 3.08 2.05 3.09-.02.05-.32 1.12-1.06 2.22-.64.95-1.31 1.9-2.36 1.92-1.03.02-1.36-.61-2.53-.61-1.16 0-1.53.59-2.51.63-1.01.04-1.78-1.02-2.43-1.96-1.32-1.91-2.33-5.38-.97-7.74.68-1.17 1.89-1.91 3.2-1.93 1-.02 1.94.68 2.53.68.58 0 1.68-.84 2.82-.72.48.02 1.84.19 2.71 1.46-.07.04-1.62.95-1.6 2.96Zm-1.6-6.98c.54-.66.91-1.57.81-2.48-.78.03-1.73.52-2.29 1.18-.5.58-.93 1.51-.81 2.4.87.07 1.75-.44 2.29-1.1Z"/>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
+                  <path d="M16.77 12.86c.02 2.31 2.03 3.08 2.05 3.09-.02.05-.32 1.12-1.06 2.22-.64.95-1.31 1.9-2.36 1.92-1.03.02-1.36-.61-2.53-.61-1.16 0-1.53.59-2.51.63-1.01.04-1.78-1.02-2.43-1.96-1.32-1.91-2.33-5.38-.97-7.74.68-1.17 1.89-1.91 3.2-1.93 1-.02 1.94.68 2.53.68.58 0 1.68-.84 2.82-.72.48.02 1.84.19 2.71 1.46-.07.04-1.62.95-1.6 2.96Zm-1.6-6.98c.54-.66.91-1.57.81-2.48-.78.03-1.73.52-2.29 1.18-.5.58-.93 1.51-.81 2.4.87.07 1.75-.44 2.29-1.1Z"/>
                 </svg>
                 <span class="app-store-copy">
                   <small>Download on the</small>
@@ -823,7 +950,7 @@
               </div>
               <div class="proof">
                 <strong>Built for two</strong>
-                <span>Designed around real couples, shared homes and everyday money conversations on both devices.</span>
+                <span>Designed around real couples, shared homes and everyday money conversations.</span>
               </div>
             </div>
           </div>
@@ -849,7 +976,28 @@
           </div>
         </section>
 
-        <section>
+        <!-- ── 2. Social proof strip ── -->
+        <section aria-label="PennyPal by the numbers">
+          <div class="stats-strip">
+            <div class="stats-strip-inner">
+              <div class="stat-item">
+                <strong>3,000+</strong>
+                <span>Couples managing money together</span>
+              </div>
+              <div class="stat-item">
+                <strong>£1.2M</strong>
+                <span>Household spending tracked</span>
+              </div>
+              <div class="stat-item">
+                <strong>68%</strong>
+                <span>Spotted avoidable spending within the first month</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── 3. Core features ── -->
+        <section id="features">
           <div class="section-heading">
             <h2>Not a generic budget app with couples added later.</h2>
             <p>
@@ -885,72 +1033,7 @@
           </div>
         </section>
 
-        <section id="features">
-          <div class="section-heading">
-            <h2>User statistics</h2>
-            <p>
-              A quick snapshot of how PennyPal is helping couples stay on top of shared household
-              money.
-            </p>
-          </div>
-          <div class="stats-grid" aria-label="User statistics">
-            <article class="stat-card">
-              <strong>3K+</strong>
-              <span>Couples managing money</span>
-            </article>
-            <article class="stat-card">
-              <strong>£1.2 million</strong>
-              <span>Spending tracked</span>
-            </article>
-            <article class="stat-card">
-              <strong>68%</strong>
-              <span>Spotted avoidable spending</span>
-            </article>
-          </div>
-        </section>
-
-        <section>
-          <div class="story-layout">
-            <article class="story-panel">
-              <h2>Made for the conversations behind the numbers.</h2>
-              <p>
-                The best money tools do more than store transactions. They reduce friction,
-                make trade-offs easier to see, and help two people move forward with confidence.
-              </p>
-              <p class="fine-print">
-                PennyPal is designed to feel warm, fast and intentional from the first import to the
-                monthly review.
-              </p>
-            </article>
-            <div class="story-list">
-              <article class="detail-card">
-                <strong>Import confidence</strong>
-                <h3>Bring real statements in, then organise from there.</h3>
-                <p>
-                  Build from actual bank activity instead of guessing categories or recreating your
-                  financial life by hand.
-                </p>
-              </article>
-              <article class="detail-card">
-                <strong>Household visibility</strong>
-                <h3>Keep household transactions synced without losing personal context.</h3>
-                <p>
-                  Rent, groceries, subscriptions and travel make sense faster when both people see
-                  the same shared transactions update across their own devices.
-                </p>
-              </article>
-              <article class="detail-card">
-                <strong>Built for daily use</strong>
-                <h3>Designed to feel clear, calm and genuinely useful.</h3>
-                <p>
-                  From first import to regular reviews, PennyPal is built to make ongoing money
-                  management feel simpler and more collaborative.
-                </p>
-              </article>
-            </div>
-          </div>
-        </section>
-
+        <!-- ── 4. Product screenshots ── -->
         <section id="screenshots">
           <div class="section-heading">
             <h2>See PennyPal in action.</h2>
@@ -1018,8 +1101,75 @@
           <p class="gallery-note">Explore the key flows for importing statements, syncing household activity between devices, reviewing transactions and understanding spending together.</p>
         </section>
 
+        <!-- ── 5. Story / deep benefits ── -->
+        <section>
+          <div class="story-layout">
+            <article class="story-panel">
+              <h2>Made for the conversations behind the numbers.</h2>
+              <p>
+                The best money tools do more than store transactions. They reduce friction,
+                make trade-offs easier to see, and help two people move forward with confidence.
+              </p>
+              <p class="fine-print">
+                PennyPal is designed to feel warm, fast and intentional — from the first import to the
+                monthly review.
+              </p>
+            </article>
+            <div class="story-list">
+              <article class="detail-card">
+                <strong>Import confidence</strong>
+                <h3>Bring real statements in, then organise from there.</h3>
+                <p>
+                  Build from actual bank activity instead of guessing categories or recreating your
+                  financial life by hand.
+                </p>
+              </article>
+              <article class="detail-card">
+                <strong>Household visibility</strong>
+                <h3>Keep household transactions synced without losing personal context.</h3>
+                <p>
+                  Rent, groceries, subscriptions and travel make sense faster when both people see
+                  the same shared transactions update across their own devices.
+                </p>
+              </article>
+              <article class="detail-card">
+                <strong>Built for daily use</strong>
+                <h3>Designed to feel clear, calm and genuinely useful.</h3>
+                <p>
+                  From first import to regular reviews, PennyPal is built to make ongoing money
+                  management feel simpler and more collaborative.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── 6. Final CTA ── -->
+        <section class="final-cta">
+          <div class="cta-panel">
+            <h2>Your household money, handled together.</h2>
+            <p>
+              Join thousands of couples who ditched the spreadsheets and finally got a clear,
+              shared view of where their money goes each month.
+            </p>
+            <div class="cta-badge-row">
+              <a class="button app-store-badge" href="https://apps.apple.com/gb/app/pennypal-uk/id6762628906" aria-label="Download PennyPal UK on the App Store">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
+                  <path d="M16.77 12.86c.02 2.31 2.03 3.08 2.05 3.09-.02.05-.32 1.12-1.06 2.22-.64.95-1.31 1.9-2.36 1.92-1.03.02-1.36-.61-2.53-.61-1.16 0-1.53.59-2.51.63-1.01.04-1.78-1.02-2.43-1.96-1.32-1.91-2.33-5.38-.97-7.74.68-1.17 1.89-1.91 3.2-1.93 1-.02 1.94.68 2.53.68.58 0 1.68-.84 2.82-.72.48.02 1.84.19 2.71 1.46-.07.04-1.62.95-1.6 2.96Zm-1.6-6.98c.54-.66.91-1.57.81-2.48-.78.03-1.73.52-2.29 1.18-.5.58-.93 1.51-.81 2.4.87.07 1.75-.44 2.29-1.1Z"/>
+                </svg>
+                <span class="app-store-copy">
+                  <small>Download on the</small>
+                  <strong>App Store</strong>
+                </span>
+              </a>
+            </div>
+            <p class="small" style="margin-top:4px; font-size:0.88rem;">Free to download &nbsp;·&nbsp; iOS &nbsp;·&nbsp; UK</p>
+          </div>
+        </section>
+
       </main>
 
+      <!-- ── Footer ── -->
       <footer class="footer">
         <div class="footer-panel small">
           <span>PennyPal helps couples stay in sync with household money in realtime.</span>
