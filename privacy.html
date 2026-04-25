@@ -7,10 +7,26 @@
   <meta name="description" content="Privacy Policy for PennyPal, including information about imported statements, household sharing and support requests.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#ff6b57">
+  <meta name="color-scheme" content="light">
+  <meta name="format-detection" content="telephone=no">
   <link rel="canonical" href="https://www.pennypal.uk/privacy.html">
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
   <link rel="manifest" href="./site.webmanifest">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="PennyPal">
+  <meta property="og:title" content="PennyPal Privacy Policy">
+  <meta property="og:description" content="Read how PennyPal handles imported statements, household sharing data and support requests.">
+  <meta property="og:url" content="https://www.pennypal.uk/privacy.html">
+  <meta property="og:image" content="https://www.pennypal.uk/assets/screenshots/PennyPal-dashboard.png">
+  <meta property="og:image:width" content="1284">
+  <meta property="og:image:height" content="2778">
+  <meta property="og:image:alt" content="PennyPal dashboard screenshot on iPhone">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PennyPal Privacy Policy">
+  <meta name="twitter:description" content="Read how PennyPal handles imported statements, household sharing data and support requests.">
+  <meta name="twitter:image" content="https://www.pennypal.uk/assets/screenshots/PennyPal-dashboard.png">
+  <meta name="twitter:image:alt" content="PennyPal dashboard screenshot on iPhone">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -35,6 +51,21 @@
         radial-gradient(circle at top right, rgba(255, 107, 87, 0.16), transparent 26%),
         linear-gradient(180deg, #fffaf6 0%, var(--bg) 100%);
       line-height: 1.65;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -48px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #111111;
+      color: #fff;
+      z-index: 20;
+    }
+
+    .skip-link:focus {
+      top: 16px;
     }
 
     a {
@@ -63,9 +94,9 @@
     }
 
     .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
       overflow: hidden;
       box-shadow: 0 12px 28px rgba(255, 107, 87, 0.24);
     }
@@ -150,9 +181,27 @@
     }
 
     .footer {
-      padding-bottom: 38px;
+      padding: 8px 0 38px;
+    }
+
+    .footer-panel {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 20px 22px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      box-shadow: var(--shadow);
       color: var(--muted);
       font-size: 0.95rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     @media (max-width: 860px) {
@@ -165,19 +214,21 @@
 </head>
 <body>
   <div class="wrap">
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="nav">
       <a class="brand" href="./">
-        <span class="brand-mark"><img src="./apple-touch-icon.png" alt="PennyPal app icon"></span>
+        <span class="brand-mark"><img src="./apple-touch-icon.png" alt="PennyPal app icon" width="180" height="180"></span>
         <span>PennyPal</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
-        <a href="./">Home</a>
+        <a href="./#features">Features</a>
+        <a href="./#screenshots">Screenshots</a>
         <a href="./support.html">Support</a>
-        <a href="./privacy.html">Privacy</a>
+        <a href="./privacy.html" aria-current="page">Privacy</a>
       </nav>
     </header>
 
-    <main>
+    <main id="main">
       <section class="hero">
         <span class="eyebrow">Privacy Policy</span>
         <h1>Your information, handled with care.</h1>
@@ -188,8 +239,11 @@
       </section>
 
       <section class="card">
+        <h2>Data controller</h2>
+        <p>PennyPal is operated by Srinivasa Chandaka. For privacy requests or data protection questions, contact <a href="mailto:contactus@pennypal.uk">contactus@pennypal.uk</a>.</p>
+
         <h2>Effective date</h2>
-        <p>Effective date: April 24, 2026</p>
+        <p>April 24, 2026</p>
 
         <h2>Information PennyPal may handle</h2>
         <ul>
@@ -207,15 +261,27 @@
 
         <h2>Legal and product basis</h2>
         <p>
-          PennyPal uses information only to operate the app, communicate about the product, respond
-          to support requests and meet applicable legal obligations.
+          PennyPal processes information only where there is a valid lawful basis under UK GDPR.
         </p>
+        <ul>
+          <li>Contract: to provide imports, syncing, household sharing and core app functionality</li>
+          <li>Legitimate interests: to respond to support requests, improve reliability and prevent misuse</li>
+          <li>Legal obligation: where retention or disclosure is required by applicable law</li>
+        </ul>
 
         <h2>Data sharing</h2>
         <p>
           PennyPal does not sell personal information. Information may be shared only when needed to
           deliver product functionality, such as household sharing features you choose to enable, or
           with service providers used to support the website or support workflows.
+        </p>
+
+        <h2>International data transfers</h2>
+        <p>
+          Some service providers used for website delivery, app distribution, support tooling or
+          font delivery may process limited technical data outside the UK. Where this happens,
+          PennyPal relies on appropriate safeguards such as adequacy decisions or contractual data
+          protection commitments.
         </p>
 
         <h2>Data retention</h2>
@@ -239,8 +305,15 @@
           <li>You can request support or privacy help by emailing PennyPal</li>
         </ul>
 
+        <h2>Your rights</h2>
+        <p>Subject to applicable law, you may have the right to request access, correction, deletion, restriction, portability or objection in relation to your personal data.</p>
+        <p>You may also have the right to complain to the UK Information Commissioner's Office (ICO). PennyPal encourages users to contact <a href="mailto:contactus@pennypal.uk">contactus@pennypal.uk</a> first so questions can be resolved directly.</p>
+
         <h2>Children's privacy</h2>
-        <p>PennyPal is not intended for children under 13.</p>
+        <p>PennyPal is not intended for children under 13 in the United Kingdom. If PennyPal becomes aware that personal data from a child under that age has been provided in error, reasonable steps will be taken to delete it.</p>
+
+        <h2>Third-party content</h2>
+        <p>The website currently uses third-party font delivery services, which may receive technical information such as IP address and browser metadata when pages load.</p>
 
         <h2>Contact</h2>
         <p>
@@ -250,7 +323,14 @@
     </main>
 
     <footer class="footer">
-      This policy applies to the PennyPal website and related app support flows.
+      <div class="footer-panel">
+        <span>This policy applies to the PennyPal website and related app support flows.</span>
+        <div class="footer-links">
+          <a href="./support.html">Support</a>
+          <a href="./privacy.html" aria-current="page">Privacy</a>
+          <a href="mailto:contactus@pennypal.uk">Contact</a>
+        </div>
+      </div>
     </footer>
   </div>
 </body>
