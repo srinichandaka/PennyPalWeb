@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PennyPal | Shared Money Clarity for Couples</title>
-  <meta name="description" content="PennyPal helps couples import statements, sync household transactions across devices in realtime, and understand personal and shared spending together.">
+  <title>PennyPal | Upload UK Statements and See Household Insights</title>
+  <meta name="description" content="PennyPal helps UK households upload supported bank statements or CSV files, organise transactions, and quickly see spending, income and monthly insights without a bank login.">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#ff6b57">
   <meta name="color-scheme" content="light">
@@ -17,16 +17,16 @@
   <link rel="preload" as="image" href="./assets/screenshots/PennyPal-dashboard.png">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="PennyPal">
-  <meta property="og:title" content="PennyPal | Shared Money Clarity for Couples">
-  <meta property="og:description" content="Import statements, sync household transactions across devices in realtime, and get a calmer shared view of money together.">
+  <meta property="og:title" content="PennyPal | Upload UK Statements and See Household Insights">
+  <meta property="og:description" content="Upload supported bank statements or CSV files, organise transactions, and review spending, income and monthly insights without a bank login.">
   <meta property="og:url" content="https://www.pennypal.uk/">
   <meta property="og:image" content="https://www.pennypal.uk/assets/screenshots/PennyPal-dashboard.png">
   <meta property="og:image:width" content="1284">
   <meta property="og:image:height" content="2778">
   <meta property="og:image:alt" content="PennyPal dashboard screenshot on iPhone">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PennyPal | Shared Money Clarity for Couples">
-  <meta name="twitter:description" content="A premium money app for couples who want realtime household sync and clarity without spreadsheet stress.">
+  <meta name="twitter:title" content="PennyPal | Upload UK Statements and See Household Insights">
+  <meta name="twitter:description" content="A premium UK money app for households who want statement uploads, clear insights and no bank login.">
   <meta name="twitter:image" content="https://www.pennypal.uk/assets/screenshots/PennyPal-dashboard.png">
   <meta name="twitter:image:alt" content="PennyPal dashboard screenshot on iPhone">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,7 +39,7 @@
       "name": "PennyPal",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "iOS",
-      "description": "PennyPal helps couples import statements, sync household transactions across devices in realtime, and review money together.",
+      "description": "PennyPal helps UK households upload supported bank statements or CSV files, organise transactions, and review spending, income and monthly insights without a bank login.",
       "url": "https://www.pennypal.uk/",
       "image": "https://www.pennypal.uk/assets/icons/icon-512.png",
       "offers": {
@@ -309,11 +309,54 @@
       margin: 18px 0 28px;
     }
 
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(24, 22, 31, 0.08);
+      box-shadow: var(--shadow-soft);
+      color: var(--brand-deep);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
     .cta-row {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
       justify-content: flex-start;
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, var(--brand) 0%, #ff8f62 100%);
+      color: #fff;
+      font-weight: 700;
+      padding: 0 22px;
+      box-shadow: 0 16px 34px rgba(255, 107, 87, 0.26);
+    }
+
+    .button-primary:hover {
+      box-shadow: 0 20px 40px rgba(255, 107, 87, 0.32);
+    }
+
+    .button-secondary {
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--text);
+      border: 1px solid rgba(24, 22, 31, 0.10);
+      box-shadow: var(--shadow-soft);
+      font-weight: 600;
+      padding: 0 22px;
+    }
+
+    .hero-meta {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
     .hero-proof {
@@ -464,12 +507,22 @@
       margin: 12px 0 0;
     }
 
+    .section-label {
+      display: inline-block;
+      margin-bottom: 10px;
+      color: var(--brand-deep);
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
     h2 {
       font-size: clamp(2.2rem, 4vw, 4rem);
       line-height: 0.98;
     }
 
-    /* ── Stats strip ── */
+    /* ── Value strip ── */
     .stats-strip {
       background: var(--bg-deep);
       border-radius: var(--radius-xl);
@@ -505,6 +558,74 @@
     .stat-item span {
       color: rgba(255, 255, 255, 0.6);
       font-size: 0.96rem;
+    }
+
+    .stat-item p {
+      margin: 10px 0 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.94rem;
+    }
+
+    /* ── How it works / feedback ── */
+    .how-grid,
+    .feedback-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .step-card,
+    .feedback-card {
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 24px;
+    }
+
+    .step-card .index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(255, 107, 87, 0.12);
+      color: var(--brand-deep);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .step-card h3,
+    .feedback-card h3 {
+      font-size: 1.32rem;
+      margin-bottom: 10px;
+    }
+
+    .step-card p,
+    .feedback-card p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .feedback-card blockquote {
+      margin: 0 0 14px;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.28rem;
+      line-height: 1.16;
+      letter-spacing: -0.03em;
+    }
+
+    .feedback-card span {
+      display: inline-block;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .micro-note {
+      margin-top: 16px;
+      color: var(--muted);
+      font-size: 0.93rem;
     }
 
     /* ── Features / premium cards ── */
@@ -773,7 +894,9 @@
     @media (max-width: 1080px) {
       .hero,
       .story-layout,
-      .premium-grid {
+      .premium-grid,
+      .how-grid,
+      .feedback-grid {
         grid-template-columns: 1fr;
       }
 
@@ -813,6 +936,10 @@
       .cta-row,
       .hero-proof {
         flex-wrap: wrap;
+      }
+
+      .hero-proof {
+        grid-template-columns: 1fr;
       }
 
       h1 {
@@ -908,11 +1035,11 @@
             <a href="./support.html">Support</a>
             <a href="./privacy.html">Privacy</a>
           </div>
-          <a class="nav-cta" href="https://apps.apple.com/gb/app/pennypal-uk/id6762628906" aria-label="Download PennyPal on the App Store">
+          <a class="nav-cta" href="https://apps.apple.com/gb/app/pennypal-uk/id6762628906" aria-label="Try PennyPal on the App Store">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
               <path d="M16.77 12.86c.02 2.31 2.03 3.08 2.05 3.09-.02.05-.32 1.12-1.06 2.22-.64.95-1.31 1.9-2.36 1.92-1.03.02-1.36-.61-2.53-.61-1.16 0-1.53.59-2.51.63-1.01.04-1.78-1.02-2.43-1.96-1.32-1.91-2.33-5.38-.97-7.74.68-1.17 1.89-1.91 3.2-1.93 1-.02 1.94.68 2.53.68.58 0 1.68-.84 2.82-.72.48.02 1.84.19 2.71 1.46-.07.04-1.62.95-1.6 2.96Zm-1.6-6.98c.54-.66.91-1.57.81-2.48-.78.03-1.73.52-2.29 1.18-.5.58-.93 1.51-.81 2.4.87.07 1.75-.44 2.29-1.1Z"/>
             </svg>
-            <span>Download free</span>
+            <span>Try PennyPal</span>
           </a>
         </nav>
       </header>
@@ -922,35 +1049,30 @@
         <!-- ── 1. Hero ── -->
         <section class="hero">
           <div class="hero-copy">
-            <h1>Household money, finally handled like a premium product.</h1>
+            <span class="eyebrow">Built for UK households</span>
+            <h1>Upload a statement. See where your money goes.</h1>
             <p>
-              PennyPal gives couples a calmer way to import statements, separate personal and shared
-              spending, and see what is really happening across the household — without wrestling with
-              spreadsheets or awkward budgeting workarounds.
+              PennyPal helps UK users upload supported bank statements and CSV files, organise
+              transactions, and quickly see spending, income, categories and monthly insights.
+              No bank login is needed, and the experience stays private, simple and easy to trust.
             </p>
             <div class="cta-row">
-              <a class="button app-store-badge" href="https://apps.apple.com/gb/app/pennypal-uk/id6762628906" aria-label="Download PennyPal UK on the App Store">
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
-                  <path d="M16.77 12.86c.02 2.31 2.03 3.08 2.05 3.09-.02.05-.32 1.12-1.06 2.22-.64.95-1.31 1.9-2.36 1.92-1.03.02-1.36-.61-2.53-.61-1.16 0-1.53.59-2.51.63-1.01.04-1.78-1.02-2.43-1.96-1.32-1.91-2.33-5.38-.97-7.74.68-1.17 1.89-1.91 3.2-1.93 1-.02 1.94.68 2.53.68.58 0 1.68-.84 2.82-.72.48.02 1.84.19 2.71 1.46-.07.04-1.62.95-1.6 2.96Zm-1.6-6.98c.54-.66.91-1.57.81-2.48-.78.03-1.73.52-2.29 1.18-.5.58-.93 1.51-.81 2.4.87.07 1.75-.44 2.29-1.1Z"/>
-                </svg>
-                <span class="app-store-copy">
-                  <small>Download on the</small>
-                  <strong>App Store</strong>
-                </span>
-              </a>
+              <a class="button button-primary" href="https://apps.apple.com/gb/app/pennypal-uk/id6762628906">Try PennyPal</a>
+              <a class="button button-secondary" href="#how-it-works">See how it works</a>
             </div>
+            <p class="hero-meta">Upload statement → get insights &nbsp;·&nbsp; No bank login needed &nbsp;·&nbsp; Supported bank statements and CSV uploads</p>
             <div class="hero-proof" aria-label="PennyPal highlights">
               <div class="proof">
-                <strong>Shared clarity</strong>
-                <span>Separate personal and household spending without losing the full picture.</span>
+                <strong>No bank login needed</strong>
+                <span>Upload a supported statement or CSV file instead of connecting your bank account.</span>
               </div>
               <div class="proof">
-                <strong>Realtime sync</strong>
-                <span>Household transactions stay in sync across devices so both partners stay up to date.</span>
+                <strong>Upload statement → get insights</strong>
+                <span>See income, spending, categories and monthly patterns soon after import.</span>
               </div>
               <div class="proof">
-                <strong>Built for two</strong>
-                <span>Designed around real couples, shared homes and everyday money conversations.</span>
+                <strong>Made for UK users</strong>
+                <span>Built around supported UK bank statements, CSV uploads and shared household reviews.</span>
               </div>
             </div>
           </div>
@@ -959,87 +1081,131 @@
             <div class="phone-stage">
               <div class="phone-backdrop" aria-hidden="true"></div>
               <div class="floating-card card-top" aria-hidden="true">
-                <span>Shared essentials</span>
-                <strong>Groceries, rent, travel</strong>
+                <span>Upload once</span>
+                <strong>Turn a statement into a clearer monthly picture</strong>
               </div>
               <div class="phone-frame">
                 <div class="phone-notch"></div>
                 <div class="phone-screen">
-                  <img src="./assets/screenshots/PennyPal-dashboard.png" alt="PennyPal dashboard screenshot" width="1284" height="2778" fetchpriority="high" decoding="async">
+                  <img src="./assets/screenshots/PennyPal-import.png" alt="PennyPal import flow screenshot" width="1284" height="2778" fetchpriority="high" decoding="async">
                 </div>
               </div>
               <div class="floating-card card-bottom" aria-hidden="true">
-                <span>Monthly insight</span>
-                <strong>See where your household money really goes</strong>
+                <span>Private by default</span>
+                <strong>Upload statements and review insights without a bank login</strong>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- ── 2. Social proof strip ── -->
-        <section aria-label="PennyPal by the numbers">
+        <!-- ── 2. Value strip ── -->
+        <section aria-label="PennyPal essentials">
           <div class="stats-strip">
             <div class="stats-strip-inner">
               <div class="stat-item">
-                <strong>3,000+</strong>
-                <span>Couples managing money together</span>
+                <strong>No bank login needed</strong>
+                <span>Keep bank credentials out of the process.</span>
+                <p>Upload a supported statement or CSV file and start from there.</p>
               </div>
               <div class="stat-item">
-                <strong>£1.2M</strong>
-                <span>Household spending tracked</span>
+                <strong>Upload statement → get insights</strong>
+                <span>Turn a file into useful monthly visibility.</span>
+                <p>See spending, income, categories and monthly trends in a clearer format.</p>
               </div>
               <div class="stat-item">
-                <strong>68%</strong>
-                <span>Spotted avoidable spending within the first month</span>
+                <strong>Supported UK statements and CSV uploads</strong>
+                <span>Built for UK users who want a simpler start.</span>
+                <p>Import supported bank statements or CSV files without pretending to be live bank syncing.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- ── 3. Core features ── -->
+        <!-- ── 3. How it works ── -->
+        <section id="how-it-works">
+          <div class="section-heading">
+            <span class="section-label">How it works</span>
+            <h2>From statement upload to a clearer monthly picture.</h2>
+            <p>
+              PennyPal is designed to feel straightforward from the first file import. Upload a
+              supported bank statement or CSV file, let PennyPal organise the transactions, then
+              review where your money is going month by month.
+            </p>
+          </div>
+          <div class="how-grid">
+            <article class="step-card">
+              <div class="index">01</div>
+              <h3>Upload a statement</h3>
+              <p>
+                Start with a supported bank statement or CSV export. There is no bank login and no
+                open-banking setup to get through first.
+              </p>
+            </article>
+            <article class="step-card">
+              <div class="index">02</div>
+              <h3>PennyPal organises transactions</h3>
+              <p>
+                Imported entries are grouped into a cleaner picture of income, spending and categories
+                so the month starts to make sense quickly.
+              </p>
+            </article>
+            <article class="step-card">
+              <div class="index">03</div>
+              <h3>Review insights</h3>
+              <p>
+                See monthly patterns, category totals and household context in a format that feels
+                clearer than a spreadsheet or a generic budgeting app.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <!-- ── 4. Core features ── -->
         <section id="features">
           <div class="section-heading">
+            <span class="section-label">Why people choose it</span>
             <h2>Not a generic budget app with couples added later.</h2>
             <p>
               PennyPal is shaped around the messy middle of shared money: what belongs to one person,
-              what belongs to the household, and how to talk about both without friction.
+              what belongs to the household, and how to review both without friction.
             </p>
           </div>
           <div class="premium-grid">
             <article class="premium-card">
               <div class="index">01</div>
-              <h3>Personal and shared spending, side by side</h3>
+              <h3>Spending, income and categories in one place</h3>
               <p>
-                See what is yours, what is your partner's, and what belongs to the household in one
-                polished view that stays easy to understand.
+                Upload a statement once and move quickly from raw entries to a monthly picture that is
+                easier to review and discuss.
               </p>
             </article>
             <article class="premium-card">
               <div class="index">02</div>
-              <h3>Realtime household syncing across devices</h3>
+              <h3>Private and simple by design</h3>
               <p>
-                Shared transactions update across your devices so you and your partner are looking at
-                the same household picture, not two versions of it.
+                PennyPal is designed to work from uploaded files, so you can explore your money
+                without handing over a bank login.
               </p>
             </article>
             <article class="premium-card">
               <div class="index">03</div>
-              <h3>Statement-led setup that respects real life</h3>
+              <h3>Built for UK households</h3>
               <p>
-                Bring in statement data, skip the blank-sheet problem, and build your spending story
-                from what has already happened.
+                Use supported UK bank statements and CSV uploads to understand shared money without
+                pretending household finance is one-size-fits-all.
               </p>
             </article>
           </div>
         </section>
 
-        <!-- ── 4. Product screenshots ── -->
+        <!-- ── 5. Product screenshots ── -->
         <section id="screenshots">
           <div class="section-heading">
+            <span class="section-label">Screenshots</span>
             <h2>See PennyPal in action.</h2>
             <p>
-              A premium product needs to show the product. These screens highlight the import flow,
-              dashboard, insights, household view and day-to-day management experience.
+              These screens show the import flow, dashboard, transactions and insights views you use
+              after uploading a supported bank statement or CSV file.
             </p>
           </div>
           <div class="screenshot-grid" role="region" aria-label="PennyPal app screenshots" tabindex="0">
@@ -1048,8 +1214,8 @@
                 <img src="./assets/screenshots/PennyPal-dashboard.png" alt="PennyPal dashboard screenshot" width="1284" height="2778" loading="lazy" decoding="async">
               </div>
               <div class="gallery-caption">
-                <strong>Track the whole picture</strong>
-                <span>See synced household totals, trends and monthly context at a glance.</span>
+                <strong>Dashboard</strong>
+                <span>See monthly totals, trends and category context in a cleaner overview.</span>
               </div>
             </article>
             <article class="gallery-card">
@@ -1057,8 +1223,8 @@
                 <img src="./assets/screenshots/PennyPal-transactions.png" alt="PennyPal transactions screenshot" width="1284" height="2778" loading="lazy" decoding="async">
               </div>
               <div class="gallery-caption">
-                <strong>Review the details</strong>
-                <span>Review individual transactions while staying aligned with what is synced across the household.</span>
+                <strong>Transactions</strong>
+                <span>Review the imported entries that make up the month instead of losing the detail.</span>
               </div>
             </article>
             <article class="gallery-card">
@@ -1066,8 +1232,8 @@
                 <img src="./assets/screenshots/PennyPal-insights.png" alt="PennyPal insights screenshot" width="1284" height="2778" loading="lazy" decoding="async">
               </div>
               <div class="gallery-caption">
-                <strong>Spot meaningful patterns</strong>
-                <span>Category and trend views make monthly spending easier to discuss.</span>
+                <strong>Insights</strong>
+                <span>Spot category patterns and monthly shifts more quickly than in a raw statement.</span>
               </div>
             </article>
             <article class="gallery-card">
@@ -1075,68 +1241,78 @@
                 <img src="./assets/screenshots/PennyPal-import.png" alt="PennyPal import flow screenshot" width="1284" height="2778" loading="lazy" decoding="async">
               </div>
               <div class="gallery-caption">
-                <strong>Import statements quickly</strong>
-                <span>Start from real data instead of building a budget from scratch.</span>
-              </div>
-            </article>
-            <article class="gallery-card">
-              <div class="device">
-                <img src="./assets/screenshots/PennyPal-settings.png" alt="PennyPal settings screenshot" width="1284" height="2778" loading="lazy" decoding="async">
-              </div>
-              <div class="gallery-caption">
-                <strong>Control the setup</strong>
-                <span>Adjust the experience with the confidence you expect from a polished app.</span>
-              </div>
-            </article>
-            <article class="gallery-card">
-              <div class="device">
-                <img src="./assets/screenshots/PennyPal-household.png" alt="PennyPal household sharing screenshot" width="1284" height="2778" loading="lazy" decoding="async">
-              </div>
-              <div class="gallery-caption">
-                <strong>Built for shared households</strong>
-                <span>Keep personal and household expenses separate while shared transactions stay up to date on both devices.</span>
+                <strong>Import flow</strong>
+                <span>Bring in a supported statement or CSV file and move straight into a usable view.</span>
               </div>
             </article>
           </div>
-          <p class="gallery-note">Explore the key flows for importing statements, syncing household activity between devices, reviewing transactions and understanding spending together.</p>
+          <p class="gallery-note">The gallery focuses on the core path most visitors care about: upload a file, review transactions, and understand the month more clearly.</p>
         </section>
 
-        <!-- ── 5. Story / deep benefits ── -->
+        <!-- ── 6. Early feedback ── -->
+        <section aria-labelledby="feedback-title">
+          <div class="section-heading">
+            <span class="section-label">Early user feedback</span>
+            <h2 id="feedback-title">What people respond to early on.</h2>
+            <p>
+              These are the kinds of reactions PennyPal is designed to earn from people trying a
+              simpler statement-led way to review household money.
+            </p>
+          </div>
+          <div class="feedback-grid">
+            <article class="feedback-card">
+              <blockquote>“Helped me understand where our monthly spending was going.”</blockquote>
+              <span>Early user feedback theme</span>
+            </article>
+            <article class="feedback-card">
+              <blockquote>“I liked that I didn’t need to connect my bank account.”</blockquote>
+              <span>Early user feedback theme</span>
+            </article>
+            <article class="feedback-card">
+              <blockquote>“Uploading a statement felt simpler than using another budgeting app.”</blockquote>
+              <span>Early user feedback theme</span>
+            </article>
+          </div>
+          <p class="micro-note">PennyPal focuses on simple statement uploads, clear categorisation and monthly insight rather than live bank syncing.</p>
+        </section>
+
+        <!-- ── 7. Story / deep benefits ── -->
         <section>
           <div class="story-layout">
             <article class="story-panel">
-              <h2>Made for the conversations behind the numbers.</h2>
+              <h2>Made for calmer monthly reviews.</h2>
               <p>
-                The best money tools do more than store transactions. They reduce friction,
-                make trade-offs easier to see, and help two people move forward with confidence.
+                PennyPal is for the point where a statement becomes a conversation. Import real data,
+                see what matters, and get to a clearer household picture without turning money admin
+                into a project.
               </p>
               <p class="fine-print">
-                PennyPal is designed to feel warm, fast and intentional — from the first import to the
-                monthly review.
+                It is designed to feel warm, fast and intentional from the first upload to the monthly
+                insight review.
               </p>
             </article>
             <div class="story-list">
               <article class="detail-card">
                 <strong>Import confidence</strong>
-                <h3>Bring real statements in, then organise from there.</h3>
+                <h3>Bring in supported statements, then organise from there.</h3>
                 <p>
-                  Build from actual bank activity instead of guessing categories or recreating your
+                  Start with actual bank activity instead of guessing categories or rebuilding your
                   financial life by hand.
                 </p>
               </article>
               <article class="detail-card">
-                <strong>Household visibility</strong>
-                <h3>Keep household transactions synced without losing personal context.</h3>
+                <strong>Privacy</strong>
+                <h3>Review your money without sharing a bank login.</h3>
                 <p>
-                  Rent, groceries, subscriptions and travel make sense faster when both people see
-                  the same shared transactions update across their own devices.
+                  The product is shaped around uploaded files and clear analysis, keeping the experience
+                  straightforward for people who prefer not to connect accounts.
                 </p>
               </article>
               <article class="detail-card">
                 <strong>Built for daily use</strong>
                 <h3>Designed to feel clear, calm and genuinely useful.</h3>
                 <p>
-                  From first import to regular reviews, PennyPal is built to make ongoing money
+                  From first upload to regular monthly reviews, PennyPal is built to make money
                   management feel simpler and more collaborative.
                 </p>
               </article>
@@ -1144,26 +1320,19 @@
           </div>
         </section>
 
-        <!-- ── 6. Final CTA ── -->
+        <!-- ── 8. Final CTA ── -->
         <section class="final-cta">
           <div class="cta-panel">
-            <h2>Your household money, handled together.</h2>
+            <h2>Try PennyPal with a statement you already have.</h2>
             <p>
-              Join thousands of couples who ditched the spreadsheets and finally got a clear,
-              shared view of where their money goes each month.
+              Upload a supported bank statement or CSV file, review the month more clearly, and keep
+              the process simple from the start.
             </p>
             <div class="cta-badge-row">
-              <a class="button app-store-badge" href="https://apps.apple.com/gb/app/pennypal-uk/id6762628906" aria-label="Download PennyPal UK on the App Store">
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
-                  <path d="M16.77 12.86c.02 2.31 2.03 3.08 2.05 3.09-.02.05-.32 1.12-1.06 2.22-.64.95-1.31 1.9-2.36 1.92-1.03.02-1.36-.61-2.53-.61-1.16 0-1.53.59-2.51.63-1.01.04-1.78-1.02-2.43-1.96-1.32-1.91-2.33-5.38-.97-7.74.68-1.17 1.89-1.91 3.2-1.93 1-.02 1.94.68 2.53.68.58 0 1.68-.84 2.82-.72.48.02 1.84.19 2.71 1.46-.07.04-1.62.95-1.6 2.96Zm-1.6-6.98c.54-.66.91-1.57.81-2.48-.78.03-1.73.52-2.29 1.18-.5.58-.93 1.51-.81 2.4.87.07 1.75-.44 2.29-1.1Z"/>
-                </svg>
-                <span class="app-store-copy">
-                  <small>Download on the</small>
-                  <strong>App Store</strong>
-                </span>
-              </a>
+              <a class="button button-primary" href="https://apps.apple.com/gb/app/pennypal-uk/id6762628906">Try PennyPal</a>
+              <a class="button button-secondary" href="#how-it-works">See how it works</a>
             </div>
-            <p class="small" style="margin-top:4px; font-size:0.88rem;">Free to download &nbsp;·&nbsp; iOS &nbsp;·&nbsp; UK</p>
+            <p class="small" style="margin-top:4px; font-size:0.88rem;">Free to download &nbsp;·&nbsp; iPhone &nbsp;·&nbsp; UK users</p>
           </div>
         </section>
 
@@ -1172,7 +1341,7 @@
       <!-- ── Footer ── -->
       <footer class="footer">
         <div class="footer-panel small">
-          <span>PennyPal helps couples stay in sync with household money in realtime.</span>
+          <span>PennyPal helps UK households upload statements, review spending and understand the month more clearly.</span>
           <div class="footer-links">
             <a href="./support.html">Support</a>
             <a href="./privacy.html">Privacy</a>
