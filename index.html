@@ -1029,6 +1029,103 @@
         display: flex;
       }
     }
+
+    /* ── Key differentiators banner ── */
+    .diff-banner {
+      margin: 0 0 8px;
+      padding: 10px 0 20px;
+    }
+
+    .diff-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      color: var(--brand-deep);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .diff-card {
+      position: relative;
+      padding: 26px 22px 24px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1.5px solid rgba(255, 107, 87, 0.18);
+      box-shadow: 0 8px 28px rgba(255, 107, 87, 0.08);
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      transition: transform 200ms ease, box-shadow 200ms ease;
+    }
+
+    .diff-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(255, 107, 87, 0.14);
+    }
+
+    .diff-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--brand) 0%, var(--accent) 100%);
+      border-radius: 3px 3px 0 0;
+    }
+
+    .diff-icon {
+      font-size: 1.7rem;
+      margin-bottom: 12px;
+      line-height: 1;
+    }
+
+    .diff-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 7px;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+
+    .diff-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .diff-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(255, 107, 87, 0.10);
+      color: var(--brand-deep);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 900px) {
+      .diff-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .diff-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1079,19 +1176,19 @@
               <a class="button button-primary" href="https://apps.apple.com/gb/app/pennypal-uk/id6762628906">Try PennyPal</a>
               <a class="button button-secondary" href="#how-it-works">See how it works</a>
             </div>
-            <p class="hero-meta">Upload statement → get insights &nbsp;·&nbsp; No bank login needed &nbsp;·&nbsp; Supported bank statements and CSV uploads</p>
+            <p class="hero-meta">No login needed &nbsp;·&nbsp; Free forever &nbsp;·&nbsp; Try with sample data &nbsp;·&nbsp; Data stays on your device</p>
             <div class="hero-proof" aria-label="PennyPal highlights">
               <div class="proof">
-                <strong>No bank login needed</strong>
-                <span>Upload a supported statement or CSV file instead of connecting your bank account.</span>
+                <strong>🔓 No login required</strong>
+                <span>Download and start immediately — no account, email or password ever needed.</span>
               </div>
               <div class="proof">
-                <strong>Upload statement → get insights</strong>
-                <span>See income, spending, categories and monthly patterns soon after import.</span>
+                <strong>🎁 Fully free</strong>
+                <span>All core features included at no cost. No paywall, no trial expiry.</span>
               </div>
               <div class="proof">
-                <strong>Made for UK users</strong>
-                <span>Built around supported UK bank statements, CSV uploads and shared household reviews.</span>
+                <strong>🔒 Your data, your device</strong>
+                <span>Everything stays local. Household sharing is opt-in and entirely your choice.</span>
               </div>
             </div>
           </div>
@@ -1117,24 +1214,75 @@
           </div>
         </section>
 
-        <!-- ── 2. Value strip ── -->
+        <!-- ── 2. Key differentiators ── -->
+        <section aria-labelledby="diff-heading" class="diff-banner">
+          <p class="diff-label" id="diff-heading">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            What makes PennyPal different
+          </p>
+          <div class="diff-grid">
+
+            <article class="diff-card">
+              <div class="diff-icon" aria-hidden="true">🔓</div>
+              <h3>No login required</h3>
+              <p>
+                Open the app and you're in. No account, no email, no password. Just download
+                and start exploring your finances straight away.
+              </p>
+              <span class="diff-pill">✓ Zero sign-up friction</span>
+            </article>
+
+            <article class="diff-card">
+              <div class="diff-icon" aria-hidden="true">🎁</div>
+              <h3>Fully featured free version</h3>
+              <p>
+                Every core feature — statement imports, transaction categories, spending insights
+                and monthly summaries — is free. No paywall, no trial countdown.
+              </p>
+              <span class="diff-pill">✓ Full access, no cost</span>
+            </article>
+
+            <article class="diff-card">
+              <div class="diff-icon" aria-hidden="true">🧪</div>
+              <h3>Try it with sample data</h3>
+              <p>
+                Not ready to upload your own statements? Explore PennyPal using built-in demo
+                data and see exactly how everything works before committing a single file.
+              </p>
+              <span class="diff-pill">✓ No data needed to start</span>
+            </article>
+
+            <article class="diff-card">
+              <div class="diff-icon" aria-hidden="true">🔒</div>
+              <h3>Your data stays on your device</h3>
+              <p>
+                All your financial data is stored locally on your iPhone — never sent to a
+                server. Household sharing is opt-in only, and entirely under your control.
+              </p>
+              <span class="diff-pill">✓ Private by default</span>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- ── 3. Value strip ── -->
         <section aria-label="PennyPal essentials">
           <div class="stats-strip">
             <div class="stats-strip-inner">
               <div class="stat-item">
-                <strong>No bank login needed</strong>
-                <span>Keep bank credentials out of the process.</span>
-                <p>Upload a supported statement or CSV file and start from there.</p>
+                <strong>No login. Ever.</strong>
+                <span>Open the app and you're in.</span>
+                <p>No account, no email, no password required. PennyPal works the moment you download it.</p>
               </div>
               <div class="stat-item">
-                <strong>Upload statement → get insights</strong>
-                <span>Turn a file into useful monthly visibility.</span>
-                <p>See spending, income, categories and monthly trends in a clearer format.</p>
+                <strong>Free — all of it</strong>
+                <span>No paywalls, no trial timers.</span>
+                <p>Import statements, view insights and track categories completely free. No catch.</p>
               </div>
               <div class="stat-item">
-                <strong>Supported UK statements and CSV uploads</strong>
-                <span>Built for UK users who want a simpler start.</span>
-                <p>Import supported bank statements or CSV files without pretending to be live bank syncing.</p>
+                <strong>Private by default</strong>
+                <span>Data lives on your device only.</span>
+                <p>Nothing leaves your iPhone unless you choose to share it with your household. No servers.</p>
               </div>
             </div>
           </div>
@@ -1183,35 +1331,46 @@
         <section id="features">
           <div class="section-heading">
             <span class="section-label">Why people choose it</span>
-            <h2>Not a generic budget app with couples added later.</h2>
+            <h2>Built differently. On purpose.</h2>
             <p>
-              PennyPal is shaped around the messy middle of shared money: what belongs to one person,
-              what belongs to the household, and how to review both without friction.
+              Most budgeting apps ask for a lot before giving you anything. PennyPal flips that:
+              no login, no paywall, no data leaving your device. Try it with sample data first,
+              then import your own statements when you're ready.
             </p>
           </div>
           <div class="premium-grid">
             <article class="premium-card">
-              <div class="index">01</div>
-              <h3>Spending, income and categories in one place</h3>
+              <div class="index">🔓</div>
+              <h3>No login, no account, no fuss</h3>
               <p>
-                Upload a statement once and move quickly from raw entries to a monthly picture that is
-                easier to review and discuss.
+                Most apps make you sign up before you see anything useful. PennyPal skips all
+                of that — open it and start straight away. No email, no password, no friction.
               </p>
             </article>
             <article class="premium-card">
-              <div class="index">02</div>
-              <h3>Private and simple by design</h3>
+              <div class="index">🎁</div>
+              <h3>Fully featured for free</h3>
               <p>
-                PennyPal is designed to work from uploaded files, so you can explore your money
-                without handing over a bank login.
+                Import statements, categorise transactions, review monthly summaries and track
+                household spending — all completely free. Every core feature, no paywall.
               </p>
             </article>
             <article class="premium-card">
-              <div class="index">03</div>
-              <h3>Built for UK households</h3>
+              <div class="index">🧪</div>
+              <h3>Demo with sample data</h3>
               <p>
-                Use supported UK bank statements and CSV uploads to understand shared money without
-                pretending household finance is one-size-fits-all.
+                Curious but not ready to upload your own statements? Explore PennyPal with
+                built-in sample data first, so you know exactly what you're getting into.
+              </p>
+            </article>
+            <article class="premium-card" style="grid-column: span 3;">
+              <div class="index">🔒</div>
+              <h3>Your data stays on your device — always</h3>
+              <p>
+                PennyPal stores everything locally on your iPhone. Your financial data is
+                never uploaded to a server or shared with anyone. If you want to review
+                finances with your partner or household, sharing is opt-in and completely
+                under your control. Private by default, collaborative by choice.
               </p>
             </article>
           </div>
@@ -1342,16 +1501,16 @@
         <!-- ── 8. Final CTA ── -->
         <section class="final-cta">
           <div class="cta-panel">
-            <h2>Try PennyPal with a statement you already have.</h2>
+            <h2>Try PennyPal free — no login needed.</h2>
             <p>
-              Upload a supported bank statement or CSV file, review the month more clearly, and keep
-              the process simple from the start.
+              Start with sample data, or upload a statement you already have. Free, private,
+              and on your device from the moment you download it.
             </p>
             <div class="cta-badge-row">
-              <a class="button button-primary" href="https://apps.apple.com/gb/app/pennypal-uk/id6762628906">Try PennyPal</a>
+              <a class="button button-primary" href="https://apps.apple.com/gb/app/pennypal-uk/id6762628906">Try PennyPal Free</a>
               <a class="button button-secondary" href="#how-it-works">See how it works</a>
             </div>
-            <p class="small" style="margin-top:4px; font-size:0.88rem;">Free to download &nbsp;·&nbsp; iPhone &nbsp;·&nbsp; UK users</p>
+            <p class="small" style="margin-top:4px; font-size:0.88rem;">Free to download &nbsp;·&nbsp; No login required &nbsp;·&nbsp; iPhone &nbsp;·&nbsp; UK users</p>
           </div>
         </section>
 
